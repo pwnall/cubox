@@ -1,0 +1,6 @@
+[submodule "third_party/u-boot"]
+	path = third_party/u-boot/src
+	url = https://github.com/SolidRun/u-boot-imx6.git
+[submodule "third_party/kernel/kernel"]
+	path = third_party/kernel/src
+	url = https://github.com/SolidRun/linux-imx6-3.14

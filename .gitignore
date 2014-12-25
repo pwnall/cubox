@@ -1,0 +1,8 @@
+# OSX.
+.DS_Store
+
+# Vim.
+*.sw*
+
+# Build output.
+build/

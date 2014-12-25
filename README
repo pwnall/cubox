@@ -1,0 +1,14 @@
+## Setup
+
+On OS X, you must create a case-sensitive disk image and do all the work inside
+the image. The commands below are borrowed from the
+[Android build setup page](https://source.android.com/source/initializing.html#creating-a-case-sensitive-disk-image).
+
+```bash
+# One-time setup.
+hdiutil create -type SPARSE -fs 'Case-sensitive Journaled HFS+' -size 8g ~/cubox.dmg
+
+# These steps must be run on every boot, or after unmounting the image.
+hdiutil attach ~/cubox.dmg -mountpoint /Volumes/cubox
+cd /Volumes/cubox
+```
