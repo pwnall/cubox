@@ -5,11 +5,14 @@ FROM ubuntu:14.10
 
 RUN sudo apt-get update && sudo apt-get -y dist-upgrade
 RUN sudo apt-get -y install build-essential bc
-RUN sudo apt-get -y install gcc-arm-linux-gnueabi u-boot-tools lzop
+RUN sudo apt-get -y install gcc-arm-linux-gnueabihf u-boot-tools lzop
 ENV ARCH arm
 ENV CROSS_COMPILE /usr/bin/arm-linux-gnueabihf-
-RUN sudo mkdir -p /root/u-boot
+RUN mkdir -p /root/kernel && mkdir -p /root/kernel-modules
 COPY src /root/kernel
 WORKDIR /root/kernel
-RUN make imx_v7_cbi_hb_defconfig && make zImage imx6q-cubox-i.dtb imx6dl-cubox-i.dtb imx6dl-hummingboard.dtb imx6q-hummingboard.dtb && make modules
-
+RUN make imx_v7_cbi_hb_defconfig && make zImage && \
+    make imx6q-cubox-i.dtb imx6dl-cubox-i.dtb && \
+    make imx6dl-hummingboard.dtb imx6q-hummingboard.dtb && \
+    make modules && \
+    make modules_install INSTALL_MOD_PATH=/root/kernel-modules

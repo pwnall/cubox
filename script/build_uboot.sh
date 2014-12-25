@@ -8,9 +8,3 @@ docker create --name="cubox-uboot-src" cubox-uboot
 docker cp cubox-uboot-src:/root/u-boot/u-boot.img build/
 docker cp cubox-uboot-src:/root/u-boot/SPL build/
 docker rm cubox-uboot-src
-
-# Build the kernel.
-
-# Flashing commands.
-# sudo dd if=build/SPL of=/dev/disk2 bs=1k seek=1
-# sudo dd if=build/u-boot.img of=/dev/disk2 bs=1k seek=42

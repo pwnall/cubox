@@ -5,9 +5,9 @@ FROM ubuntu:14.10
 
 RUN sudo apt-get update && sudo apt-get -y dist-upgrade
 RUN sudo apt-get -y install build-essential
-RUN sudo apt-get -y install gcc-arm-linux-gnueabi u-boot-tools lzop
+RUN sudo apt-get -y install gcc-arm-linux-gnueabihf u-boot-tools lzop
 ENV ARCH arm
-ENV CROSS_COMPILE /usr/bin/arm-linux-gnueabi-
+ENV CROSS_COMPILE /usr/bin/arm-linux-gnueabihf-
 RUN sudo mkdir -p /root/u-boot
 COPY src /root/u-boot
 WORKDIR /root/u-boot
