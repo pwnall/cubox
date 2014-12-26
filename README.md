@@ -1,6 +1,14 @@
 # Cubox
 
-This is a
+This repository contains scripts for building an image for the
+[SolidRun CuBox-i](http://www.solid-run.com/products/cubox-i-mini-computer/).
+
+The repository imports
+[SolidRun's forked repositories](https://github.com/SolidRun/) as submodules,
+and distills the information in the
+[SolidRun Wiki](http://www.solid-run.com/wiki/Main_Page) into executable
+scripts. This approach is intended to help reduce the interation time for
+building a bootable image for the CuBox-i.
 
 
 ## Prerequisites
